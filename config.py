@@ -2,6 +2,7 @@ import os
 
 class Config:
     QUOTE_API_BASE_URL ='http://quotes.stormconsultancy.co.uk/random.json'
+                                                # username   password   database
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:bella@localhost/blog'
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -16,7 +17,6 @@ class Config:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     SENDER_EMAIL = 'annechege@gmail.com'
-
 
     # simple mde  configurations
     SIMPLEMDE_JS_IIFE = True
