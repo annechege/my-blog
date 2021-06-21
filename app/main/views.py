@@ -129,20 +129,3 @@ def updateBlog(id):
 @main.route('/about')
 def about():
     return render_template('about.html', title = 'About')  
-
-
-@main.route('/subscribe', methods=['GET','POST'])
-def subscriber():
-    getquotes = getQuotes()
-    subscriber_form=SubscriberForm()
-    blog = Blog.query.order_by(Blog.posted.desc()).all()
-    if subscriber_form.validate_on_submit():
-        subscriber= Subscriber(email=subscriber_form.email.data,name = subscriber_form.name.data)
-        db.session.add(subscriber)
-        db.session.commit()
-        mail_message("Welcome to MyBlog",subscriber.email,subscriber=subscriber)
-        title= "MyBlog"
-        return render_template('index.html',title=title, blog=blog, getquotes = getquotes)
-    subscriber = Blog.query.all()
-    blog = Blog.query.all()
-    return render_template('subscribe.html',subscriber=subscriber,subscriber_form=subscriber_form,blog=blog) 
