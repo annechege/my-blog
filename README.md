@@ -5,7 +5,7 @@ Blogging website where you can create and share your opinions and other users ca
 Anne Chege
 
 ## Description
-An app that give you a platform to share your pitches and to see what others have pithed about 
+An app that give you a platform to share your blogs 
 
 ### Prerequisites
 You need to have git installed
